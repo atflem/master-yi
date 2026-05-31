@@ -29,7 +29,7 @@ Follow the [Isaac Lab installation guide](https://isaac-sim.github.io/IsaacLab/m
 Clone this repository, then install the `Reach` extension in editable mode:
 
 ```bash
-git clone https://github.com/<your-username>/fish-singulation-rl.git
+git clone https://github.com/atflem/fish-singulation-rl.git
 cd fish-singulation-rl
 pip install -e source/Reach
 ```
@@ -121,7 +121,7 @@ python scripts/skrl/play.py \
 
 The best S3a checkpoint (run `2026-05-27_12-04-59`, 765K steps, delivery = 0.387) is available as a release asset:
 
-**[Download best_agent.pt](https://github.com/<your-username>/fish-singulation-rl/releases/tag/v1.0)**
+**[Download best_agent.pt](https://github.com/atflem/fish-singulation-rl/releases/tag/v1.0)**
 
 Place it at `logs/skrl/fish3_s3a/2026-05-27_12-04-59/checkpoints/best_agent.pt` to use the exact path shown in the evaluation command above, or pass the path explicitly via `--checkpoint`.
 
