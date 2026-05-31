@@ -3,7 +3,7 @@
 Companion code for the Master's thesis:
 
 > **[Reinforcement Learning for Robotic Fish Singulation: A Simulation-Based Development Approach]**
-> [Andreas Flem], [NTNU], [2026]
+> [Andreas Flem], [Norwegian University of Science and Technology], [2026]
 
 This repository contains the Isaac Lab environment and PPO training configurations used to train a UR10e robot arm to push fish from an infeed conveyor to an outfeed conveyor in simulation. The primary result is a single-fish push policy (Stage S3a) that achieves 96.8% of the theoretical delivery ceiling after approximately 765,000 training steps.
 
@@ -29,8 +29,8 @@ Follow the [Isaac Lab installation guide](https://isaac-sim.github.io/IsaacLab/m
 Clone this repository, then install the `Reach` extension in editable mode:
 
 ```bash
-git clone https://github.com/atflem/fish-singulation-rl.git
-cd fish-singulation-rl
+git clone https://github.com/atflem/master-yi.git fish_singulation
+cd fish_singulation
 pip install -e source/Reach
 ```
 
@@ -75,7 +75,7 @@ python scripts/skrl/train.py --task UR10e-Fish3-S1-v0 --num_envs 4096
 python scripts/skrl/train.py \
   --task UR10e-Fish3-S3a-v0 \
   --num_envs 4096 \
-  --checkpoint logs/skrl/fish3_s1/<run_id>/checkpoints/best_agent.pt
+  --checkpoint logs/skrl/fish3_s1/2026-05-02_03-54-51_ppo_torch/checkpoints/best_agent.pt
 ```
 
 **Stage S3b** (transfer from S3a best checkpoint):
@@ -84,7 +84,7 @@ python scripts/skrl/train.py \
 python scripts/skrl/train.py \
   --task UR10e-Fish3-S3b-v0 \
   --num_envs 4096 \
-  --checkpoint logs/skrl/fish3_s3a/<run_id>/checkpoints/best_agent.pt
+  --checkpoint logs/skrl/fish3_s3a/2026-05-27_12-04-59_ppo_torch/checkpoints/best_agent.pt
 ```
 
 **Stage S3ab** (two-fish intermediate; transfer from S3a best checkpoint):
@@ -93,7 +93,7 @@ python scripts/skrl/train.py \
 python scripts/skrl/train.py \
   --task UR10e-Fish3-S3ab-v0 \
   --num_envs 4096 \
-  --checkpoint logs/skrl/fish3_s3a/<run_id>/checkpoints/best_agent.pt
+  --checkpoint logs/skrl/fish3_s3a/2026-05-27_12-04-59_ppo_torch/checkpoints/best_agent.pt
 ```
 
 Monitor training with TensorBoard:
@@ -112,25 +112,25 @@ Play mode uses 4 parallel environments with observation noise disabled and fixed
 python scripts/skrl/play.py \
   --task UR10e-Fish3-S3a-Play-v0 \
   --num_envs 4 \
-  --checkpoint logs/skrl/fish3_s3a/<run_id>/checkpoints/best_agent.pt
+  --checkpoint logs/skrl/fish3_s3a/2026-05-27_12-04-59_ppo_torch/checkpoints/best_agent.pt
 ```
 
 ---
 
 ## Pretrained Checkpoint
 
-The best S3a checkpoint (run `2026-05-27_12-04-59`, 765K steps, delivery = 0.387) is available as a release asset:
+The best S3a checkpoint (run `2026-05-27_12-04-59_ppo_torch`, ~765k steps, delivery = 0.387) is available as a release asset:
 
-**[Download best_agent.pt](https://github.com/atflem/fish-singulation-rl/releases/tag/v1.0)**
+**[Download best_agent.pt](https://github.com/atflem/master-yi/releases/tag/v1.0)**
 
-Place it at `logs/skrl/fish3_s3a/2026-05-27_12-04-59/checkpoints/best_agent.pt` to use the exact path shown in the evaluation command above, or pass the path explicitly via `--checkpoint`.
+Place it at `logs/skrl/fish3_s3a/2026-05-27_12-04-59_ppo_torch/checkpoints/best_agent.pt` to use the exact path shown in the evaluation command above, or pass the path explicitly via `--checkpoint`.
 
 ---
 
 ## Repository Structure
 
 ```
-fish-singulation-rl/
+master-yi/
 ├── scripts/
 │   └── skrl/
 │       ├── train.py          # Training entry point
@@ -166,11 +166,11 @@ fish-singulation-rl/
 If you use this code, please cite:
 
 ```bibtex
-@mastersthesis{[citekey],
-  author  = {[Author name]},
-  title   = {[Thesis title]},
-  school  = {[University]},
-  year    = {[Year]},
+@mastersthesis{[RLfishSingulation2026],
+  author  = {[Andreas Flem]},
+  title   = {[Reinforcement Learning for Robotic Fish Singulation: A Simulation-Based Development Approach]},
+  school  = {[Norwegian University of Science and Technology]},
+  year    = {[2026]},
 }
 ```
 
