@@ -119,7 +119,7 @@ python scripts/skrl/play.py \
 
 ## Pretrained Checkpoint
 
-The best S3a checkpoint (run `2026-05-27_12-04-59`, 1.5 M steps, delivery = 0.387) is available as a release asset:
+The best S3a checkpoint (run `2026-05-27_12-04-59`, 765K steps, delivery = 0.387) is available as a release asset:
 
 **[Download best_agent.pt](https://github.com/<your-username>/fish-singulation-rl/releases/tag/v1.0)**
 
