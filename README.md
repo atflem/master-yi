@@ -2,8 +2,8 @@
 
 Companion code for the Master's thesis:
 
-> **[Thesis title]**
-> [Author name], [University], [Year]
+> **[Reinforcement Learning for Robotic Fish Singulation: A Simulation-Based Development Approach]**
+> [Andreas Flem], [NTNU], [2026]
 
 This repository contains the Isaac Lab environment and PPO training configurations used to train a UR10e robot arm to push fish from an infeed conveyor to an outfeed conveyor in simulation. The primary result is a single-fish push policy (Stage S3a) that achieves 96.8% of the theoretical delivery ceiling after approximately 765,000 training steps.
 
